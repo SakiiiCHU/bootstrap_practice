@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Information</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <style>
+      /* 縮圖樣式 */
+      .thumbnail-wrapper {
+        width: 70px;
+        height: 70px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .thumbnail-wrapper img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Quantity Selector */
+      .quantity-group {
+        border: 1px solid #000;
+        border-radius: 5px;
+        overflow: hidden;
+        height: 50px;
+      }
+
+      .quantity-btn {
+        width: 10%; /* 按鈕占總寬度的 10% */
+        background-color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid #000; 
+        cursor: pointer;
+      }
+
+      .quantity-btn:last-child {
+        border-left: 1px solid #000; 
+        border-right: none; 
+      }
+
+      .quantity-input {
+        width: 80%; 
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        height: 100%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="">
+      <!-- nav列 start -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <!-- 插入logo圖 / 文字-->
+            Bootstrap.
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li> -->
+              
+              <!-- nav導覽項目 -->
+              <li class="nav-item">
+                <a class="nav-link" href="./about_us.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./product_list.html">Artist</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./product_detail.html">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./store2.html">Store</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./FAQ.html">FAQ</a>
+              </li>
+
+              <!-- 不需要disable -->
+            </ul>
+            <!-- 右側自定義icon start-->
+            <form class="d-flex">
+              
+
+              <button
+                class="btn btn-link m-0"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample"
+              >
+                <!-- <i class="bi bi-cart fs-4 text-black"></i> -->
+                <i class="bi bi-bag fs-5 text-black"></i>
+              </button>
+
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-link m-0"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i class="bi bi-person fs-4 text-black"></i>
+              </button>
+
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button> -->
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- nav列 end -->
+    </header>
+
+    <!-- 麵包屑start -->
+    <div class="bg-custom pb-5">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Product Information
+          </li>
+        </ol>
+      </nav>
+    </div>
+    <!-- 麵包屑end -->
+
+    <!--  -->
+    <div class="container my-5">
+      <div class="row g-5">
+        <!-- Left Product Image Carousel -->
+        <div class="col-12 col-lg-6 product-images">
+          <!-- Carousel -->
+          <div
+            id="productCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="img/product_detail/img_4.jpg"
+                  class="img-fluid rounded"
+                  alt="Main Product Image"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/product_detail/img_2.jpg"
+                  class="img-fluid rounded"
+                  alt="Thumbnail 1"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/product_detail/img_3.jpg"
+                  class="img-fluid rounded"
+                  alt="Thumbnail 2"
+                />
+              </div>
+            </div>
+            <!-- Carousel Controls -->
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#productCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#productCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!-- Thumbnails -->
+          <div class="d-flex justify-content-center mt-3">
+            <div class="thumbnail-wrapper me-2">
+              <img
+                src="img/product_detail/img_4.jpg"
+                class="img-fluid"
+                alt="Main Thumbnail"
+                data-bs-target="#productCarousel"
+                data-bs-slide-to="0"
+              />
+            </div>
+            <div class="thumbnail-wrapper me-2">
+              <img
+                src="img/product_detail/img_2.jpg"
+                class="img-fluid"
+                alt="Thumbnail 1"
+                data-bs-target="#productCarousel"
+                data-bs-slide-to="1"
+              />
+            </div>
+
+            <div class="thumbnail-wrapper">
+              <img
+                src="img/product_detail/img_3.jpg"
+                class="img-fluid"
+                alt="Thumbnail 3"
+                data-bs-target="#productCarousel"
+                data-bs-slide-to="3"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Product Details -->
+        <div class="col-12 col-lg-6 product-details">
+          <h4>Camera</h4>
+          <p class="text-muted">
+            Embrace the art of storytelling with a camera that paints light into
+            unforgettable memories, merging precision and elegance in every
+            frame.
+          </p>
+          <div class="text-end">
+            <h4 class="">1100 €</h4>
+          </div>
+          <p class="">
+            Limited offer: Save 25% on orders over 1000 €.
+            <br />
+            <a href="#" class="text-decoration-underline"
+              >Sign in to apply the discount.</a
+            >
+          </p>
+          <hr />
+
+          <!-- Color Selection -->
+          <p class="fw-bold">COLOR: BLACK, SILVER</p>
+          <div class="d-flex align-items-center mb-4">
+            <div
+              class="me-2"
+              style="
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: #000;
+                border: 1px solid #ddd;
+              "
+            ></div>
+            <div
+              style="
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: #c0c0c0;
+                border: 1px solid #ddd;
+              "
+            ></div>
+          </div>
+
+          <!-- Quantity Selector -->
+          <p class="fw-bold">QUANTITY</p>
+          <div
+            class="btn-group w-100 quantity-group mb-3"
+            role="group"
+            aria-label="Quantity"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-dark fw-bold quantity-btn"
+            >
+              -
+            </button>
+            <input
+              type="text"
+              class="form-control quantity-input text-center"
+              value="1"
+            />
+            <button
+              type="button"
+              class="btn btn-outline-dark fw-bold quantity-btn right-border"
+            >
+              +
+            </button>
+          </div>
+
+          <!-- Add to Bag and Price -->
+          <a
+            href="#"
+            class="d-flex align-items-center justify-content-between w-100 add-to-bag-group text-decoration-none bg-black text-white p-3 rounded"
+          >
+            <span class="add-to-bag-text">Add to bag</span>
+            <span class="add-to-bag-price">1100 €</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product Details Tabs -->
+      <ul class="nav nav-tabs mt-5" id="productTab" role="tablist">
+        <li class="nav-item">
+          <button
+            class="nav-link active"
+            id="details-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#details"
+            type="button"
+          >
+            Product Details
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            class="nav-link"
+            id="specs-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#specs"
+            type="button"
+          >
+            Specifications
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            class="nav-link"
+            id="reviews-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#reviews"
+            type="button"
+          >
+            Customer Reviews
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content mt-3" id="productTabContent">
+        <div class="tab-pane fade show active" id="details" role="tabpanel">
+          <p>
+            The ProCam 3000 is equipped with a 24.2MP CMOS sensor and an
+            advanced image processor to deliver exceptional image quality.
+            Perfect for both amateurs and professionals.
+          </p>
+          <ul>
+            <li>4K UHD Video Recording</li>
+            <li>Built-in Wi-Fi and Bluetooth</li>
+            <li>Lightweight and Portable Design</li>
+            <li>Full Auto and Manual Modes</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="specs" role="tabpanel">
+          <p><strong>Specifications:</strong></p>
+          <ul>
+            <li>Sensor: 24.2MP CMOS</li>
+            <li>Video: 4K UHD at 30fps</li>
+            <li>Connectivity: Wi-Fi, Bluetooth</li>
+            <li>Weight: 800g</li>
+            <li>Battery Life: Up to 500 shots</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="reviews" role="tabpanel">
+          <p>Customer Reviews will be displayed here...</p>
+        </div>
+      </div>
+    </div>
+
+<!-- 互動式窗 start-->
+    <!-- Modal 2(login)-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <!-- modal-dialog-centered 垂直置中-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- 插入form start-->
+            <form
+              action=""
+              id="LoginForm"
+              autocomplete="off"
+              class="needs-validation"
+              novalidate
+            >
+              <div class="form-group mb-2">
+                <label for="account">アカウント</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="account"
+                  name="account"
+                  placeholder="例）SakiCHU"
+                  required
+                />
+                <div class="invalid-feedback">Please choose a username.</div>
+              </div>
+
+              <div class="form-group mb-2">
+                <label for="password">パスワード</label>
+                <input
+                  class="form-control"
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="please enter your password"
+                  required
+                />
+                <div class="invalid-feedback">Please choose a username.</div>
+              </div>
+              <p class="text-end">
+                <a href="">パスワードを忘れた</a>
+              </p>
+              <div class="form-group">
+                <!-- .btn.btn-primary -->
+                <div class="d-grid">
+                  <input
+                    type="submit"
+                    class="btn btn-outline-primary"
+                    value="送信內容を內容する"
+                  />
+                </div>
+
+                <!-- <button type="submit" class="btn-submit">
+            <span>送信內容を內容する</span>
+            <i class="bi bi-arrow-right-circle-fill"></i>
+          </button> -->
+              </div>
+            </form>
+            <!-- 插入form end-->
+          </div>
+          <!-- footer可有可無，可刪 -->
+          <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- offcanvas cart start-->
+    <!-- offcanvas -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h4 class="offcanvas-title my-2" id="offcanvasExampleLabel">
+          Your Bag
+        </h4>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body my-5">
+        <div>Your shopping bag is empty.</div>
+        <div class="btn mt-3">
+          <button
+            class="btn btn-secondary my-5"
+            type="button"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+          >
+            Check Out
+          </button>
+          <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+    <!-- offcanvas cart end -->
+    <!-- 互動式窗 end -->
+
+    <!-- back to top start -->
+    <a
+      href="#"
+      class="position-fixed bottom-0 end-0 bg-black p-3 m-3 text-white d-flex align-items-center justify-content-center"
+      style="width: 50px; height: 50px; border-radius: 50%"
+    >
+      Top
+    </a>
+
+    <!-- footer start -->
+    <footer class="footer bg-dark text-light py-5">
+      <div class="container text-center">
+        <!-- APP 區塊 -->
+        <h5 class="mb-4 fs-5">APP</h5>
+        <div class="app-buttons mb-5 d-flex justify-content-center gap-3">
+          <a href="#">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Google Play"
+              class="img-fluid"
+              style="max-height: 40px"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="App Store"
+              class="img-fluid"
+              style="max-height: 40px"
+            />
+          </a>
+        </div>
+    
+        <!-- 全球官方SNS -->
+        <h5 class="mb-4 fw-light">グローバル公式SNS</h5>
+        <div class="social-icons mb-5 d-flex justify-content-center gap-3">
+          <i class="bi bi-instagram fs-5"></i>
+          <i class="bi bi-facebook fs-5"></i>
+          <i class="bi bi-x fs-5"></i>
+          <i class="bi bi-youtube fs-5"></i>
+          <i class="bi bi-tiktok fs-5"></i>
+          <i class="bi bi-threads fs-5"></i>
+          <i class="bi bi-pinterest fs-5"></i>
+        </div>
+    
+        <!-- 聯絡資訊 -->
+        <p class="mb-2 small">
+          📧 Email: <a href="mailto:tingccc93@gmail.com">tingccc93@gmail.com</a> |
+          🔗 GitHub: <a href="https://github.com/SakiiiCHU" target="_blank">SakiiiCHU</a>
+        </p>
+    
+        <!-- 法律條款與版權 -->
+        <p class="small mb-2">
+          本網站嵌入影片來源自 YouTube，部分圖片來源自 Unsplash，版權歸原作者所有。若有問題，請聯繫我。
+        </p>
+        <p class="small fw-light mb-0">
+          ©2024 Ting-Chen Chu. 本網站為學習作品，僅供示範用途，非商業用途。
+        </p>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- back to top end -->
+
+    <!-- 掛載 Boostrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="JS/vlidation.js"></script>
+  </body>
+</html>
+

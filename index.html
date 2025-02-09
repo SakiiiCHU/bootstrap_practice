@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bootstrap_practice_homepage</title>
+
+    <!-- 掛載 Boostrap CSS -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style>
+      .bg-primary {
+        background: rgb(14, 14, 14) !important;
+      }
+      .bg-custom {
+        background-color: #cbc6c5;
+      }
+    
+      .img-container {
+        width: 100%; 
+        height: 250px; 
+        overflow: hidden; 
+        position: relative;
+      }
+
+      .img-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+      }
+      
+      .circle-img-container {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .circle-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @media (max-width: 768px) {
+        .circle-img-container {
+          width: 150px; 
+          height: 150px; 
+        }
+      }
+
+      @media (min-width: 768px) {
+        .circle-img-container {
+          width: 200px; 
+          height: 200px; 
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .circle-img-container {
+          width: 250px; 
+          height: 250px; 
+        }
+      }
+    </style>
+  </head>
+  <body class="h-100 d-flex flex-column">
+    <!-- display-flex start-->
+    <main class="flex-shrink-0">
+      <div class="container"></div>
+    </main>
+    <!-- d-flex end -->
+
+    <!-- header start -->
+    <header class="">
+      <!-- nav列 start -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <!-- 插入logo圖 / 文字-->
+            Bootstrap.
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li> -->
+              
+              <!-- nav導覽項目 -->
+              <li class="nav-item">
+                <a class="nav-link" href="./about_us.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./product_list.html">Artist</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./product_detail.html">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./store2.html">Store</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./FAQ.html">FAQ</a>
+              </li>
+
+              <!-- 不需要disable -->
+            </ul>
+            <!-- 右側自定義icon start-->
+            <form class="d-flex">
+              
+
+              <button
+                class="btn btn-link m-0"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample"
+              >
+                <!-- <i class="bi bi-cart fs-4 text-black"></i> -->
+                <i class="bi bi-bag fs-5 text-black"></i>
+              </button>
+
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-link m-0"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i class="bi bi-person fs-4 text-black"></i>
+              </button>
+
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button> -->
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- nav列 end -->
+    </header>
+    <!-- header end -->
+
+    <!-- 輪播Carousel start -->
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/new_1920_1.png" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./img/new_1920_2.png" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./img/new_1920_3.png" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Carousel end -->
+
+    <!-- .container>.row>.col-6*2>p{item$} -->
+
+    <!-- 增加裝置斷點.col-12.col-md-6.col-xl-3.mb-5 -->
+
+    <!-- col *2 -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 mb-5 my-5">
+          <div class="ratio ratio-16x9">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/cdX5JvL43oM?si=c8Obd9JG2Y-H96LU"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mb-5 my-5">
+          <div class="ratio ratio-16x9">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/Q4vF69CcDY0?si=dfGd3Dk2MXpZjqIP"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- col*3 -->
+    <!-- .container>.row>.col-4*3>img.w-100+p{item$} -->
+    <!-- .container>.row>.col-12.col-md-4.mb-5*3>img.w-100+p{item$} -->
+    <!-- .bg-primary.py-5.my-5 -->
+
+    <div class="bg-custom py-5 my-5">
+      <div class="container">
+        <div class="row">
+          <h4 class="col-12 text-white fs-3 mb-5">
+            <div>New Product</div>
+          </h4>
+        </div>
+        <div class="row text-center">
+          <!-- Item 1 -->
+          <div class="col-12 col-md-4 mb-5 text-white">
+            <div class="position-relative square-container">
+              <div
+                class="position-absolute start-0 top-0 p-3 m-3 bg-primary text-white rounded-circle d-flex justify-content-center align-items-center"
+                style="width: 50px; height: 50px; font-size: 14px"
+              >
+                New
+              </div>
+              <a href="./product_detail.html"
+                ><img
+                  src="./img/product_detail/img_4.jpg"
+                  alt="Item 1"
+                  class="w-100 h-100 object-fit-cover mb-3"
+              /></a>
+              <p>Product 1</p>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="col-12 col-md-4 mb-5 text-white">
+            <div class="position-relative square-container">
+              <div
+                class="position-absolute start-0 top-0 p-3 m-3 bg-white text-black rounded-circle d-flex justify-content-center align-items-center"
+                style="width: 50px; height: 50px; font-size: 14px"
+              >
+                New
+              </div>
+              <a href="./product_detail.html"
+                ><img
+                  src="./img/product_detail/img_3.jpg"
+                  alt="Item 2"
+                  class="w-100 h-100 object-fit-cover mb-3"
+              /></a>
+              <a href="./product_detail.html" class="text-white">Product 2</a>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="col-12 col-md-4 mb-5 text-white">
+            <div class="square-container position-relative">
+              <div
+                class="position-absolute start-0 top-0 p-3 m-3 bg-primary text-white rounded-circle d-flex justify-content-center align-items-center"
+                style="width: 50px; height: 50px; font-size: 14px"
+              >
+                New
+              </div>
+              <img
+                src="./img/product_detail/img_2.jpg"
+                alt="Item 3"
+                class="w-100 h-100 object-fit-cover mb-3"
+              />
+              <p>Product 3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 row *2 -->
+    <!-- .container>.row>.col-12.col-lg-6*2 -->
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <!-- .row>.col-6*2 -->
+          <div class="row d-flex g-0 my-5">
+            <div class="col-6">
+              <div class="img-container">
+                <img
+                  src="img/new_1920_3.png"
+                  alt="Store"
+                  class="w-100"
+                  style="border-radius: 15px 0 0 15px"
+                />
+              </div>
+            </div>
+            <div
+              class="col-6 bg-primary d-flex align-items-center justify-content-center"
+              style="border-radius: 0 15px 15px 0"
+            >
+              <div class="row text-center">
+                <p class="text-white fs-3"><i class="bi bi-shop-window"></i></p>
+                <h4 class="text-white">STORE</h4>
+                <p class="text-white">Search for Store Locations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="row d-flex g-0 my-5">
+            <div class="col-6">
+              <div class="img-container">
+                <img
+                  src="img/new_1920_1.png"
+                  alt="Recruit"
+                  class="w-100"
+                  style="border-radius: 15px 0 0 15px"
+                />
+              </div>
+            </div>
+            <div
+              class="col-6 d-flex align-items-center justify-content-center"
+              style="
+                background-color: rgb(168, 161, 149);
+                border-radius: 0 15px 15px 0;
+              "
+            >
+              <div class="row text-center">
+                <p class="text-white fs-3"><i class="bi bi-people"></i></p>
+                <h4 class="text-white">RECRUIT</h4>
+                <p class="text-white">Become Our Happy Partner</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- col*4 -->
+    <!-- 多層同時編輯   alt + 滑鼠游標 -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-3 mb-4">
+          <!-- 固定大小的圓形容器 -->
+          <div class="circle-img-container">
+            <img
+              src="img/img_unsplash 2/img_15.jpg"
+              alt="Item 1"
+              class="w-100 rounded-circle"
+            />
+          </div>
+          <p class="text-left mt-5">
+            Item 1 - This is a sample description that will go here to explain
+            the item. It could be about the features or any other important
+            details related to the item being shown here.
+          </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-4">
+          <div class="circle-img-container">
+            <img
+              src="img/img_unsplash 2/img_17.jpg"
+              alt="Item 2"
+              class="w-100 rounded-circle"
+            />
+          </div>
+          <p class="text-left mt-5">
+            Item 2 - This is a sample description for the second item. It
+            provides additional information about the item, such as its unique
+            selling points and why it's a great choice for customers.
+          </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-4">
+          <div class="circle-img-container">
+            <img
+              src="img/img_unsplash 2/img_7.jpg"
+              alt="Item 3"
+              class="w-100 rounded-circle"
+            />
+          </div>
+          <p class="text-left mt-5">
+            Item 3 - Here is a short description of item 3. The content can
+            include various aspects of the item, including its design, features,
+            and why it's a must-have for any collection.
+          </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 mb-4">
+          <div class="circle-img-container">
+            <img
+              src="img/img_unsplash 2/img_10.jpg"
+              alt="Item 4"
+              class="w-100 rounded-circle"
+            />
+          </div>
+          <p class="text-left mt-5">
+            Item 4 - This item is designed to be a practical and stylish
+            addition to your space. The description here tells customers more
+            about the functionality and the aesthetic appeal of the product.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- col *6 -->
+    <!-- <div class="container my-5">
+      <div class="row">
+        <div class="col-6 col-md-4 col-xl-2 mb-5 text-center fs-5">
+          <p><i class="bi bi-mic"></i></p>
+          <p>icon1</p>
+        </div>
+        <div class="col-6 col-md-4 col-xl-2 mb-5 text-center fs-5">
+          <p><i class="bi bi-envelope"></i></p>
+          <p>icon2</p>
+        </div>
+        <div class="col-6 col-md-4 col-xl-2 mb-5 text-center fs-5">
+          <p><i class="bi bi-cloud-rain-heavy-fill"></i></p>
+          <p>icon3</p>
+        </div>
+        <div class="col-6 col-md-4 col-xl-2 mb-5 text-center fs-5">
+          <p><i class="bi bi-cart-plus-fill"></i></p>
+          <p>icon4</p>
+        </div>
+        <div class="col-6 col-md-4 col-xl-2 mb-5 text-center fs-5">
+          <p><i class="bi bi-badge-hd"></i></p>
+          <p>icon5</p>
+        </div>
+        <div class="col-6 col-md-4 col-xl-2 mb-5 text-center fs-5">
+          <p><i class="bi bi-arrow-up-circle"></i></p>
+          <p>icon6</p>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- 互動式窗 start-->
+    <!-- Modal 2(login)-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <!-- modal-dialog-centered 垂直置中-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- 插入form start-->
+            <form
+              action=""
+              id="LoginForm"
+              autocomplete="off"
+              class="needs-validation"
+              novalidate
+            >
+              <div class="form-group mb-2">
+                <label for="account">アカウント</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="account"
+                  name="account"
+                  placeholder="例）SakiCHU"
+                  required
+                />
+                <div class="invalid-feedback">Please choose a username.</div>
+              </div>
+
+              <div class="form-group mb-2">
+                <label for="password">パスワード</label>
+                <input
+                  class="form-control"
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="please enter your password"
+                  required
+                />
+                <div class="invalid-feedback">Please choose a username.</div>
+              </div>
+              <p class="text-end">
+                <a href="">パスワードを忘れた</a>
+              </p>
+              <div class="form-group">
+                <!-- .btn.btn-primary -->
+                <div class="d-grid">
+                  <input
+                    type="submit"
+                    class="btn btn-outline-primary"
+                    value="送信內容を內容する"
+                  />
+                </div>
+
+                <!-- <button type="submit" class="btn-submit">
+            <span>送信內容を內容する</span>
+            <i class="bi bi-arrow-right-circle-fill"></i>
+          </button> -->
+              </div>
+            </form>
+            <!-- 插入form end-->
+          </div>
+          <!-- footer可有可無，可刪 -->
+          <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- offcanvas cart start-->
+    <!-- offcanvas -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h4 class="offcanvas-title my-2" id="offcanvasExampleLabel">
+          Your Bag
+        </h4>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body my-5">
+        <div>Your shopping bag is empty.</div>
+        <div class="btn mt-3">
+          <button
+            class="btn btn-secondary my-5"
+            type="button"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+          >
+            Check Out
+          </button>
+          <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+    <!-- offcanvas cart end -->
+    <!-- 互動式窗 end -->
+
+    <!-- back to top start -->
+    <a
+      href="#"
+      class="position-fixed bottom-0 end-0 bg-black p-3 m-3 text-white d-flex align-items-center justify-content-center"
+      style="width: 50px; height: 50px; border-radius: 50%"
+    >
+      Top
+    </a>
+
+    <!-- footer start -->
+    <footer class="footer bg-dark text-light py-5">
+      <div class="container text-center">
+        <!-- APP 區塊 -->
+        <h5 class="mb-4 fs-5">APP</h5>
+        <div class="app-buttons mb-5 d-flex justify-content-center gap-3">
+          <a href="#">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Google Play"
+              class="img-fluid"
+              style="max-height: 40px"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="App Store"
+              class="img-fluid"
+              style="max-height: 40px"
+            />
+          </a>
+        </div>
+    
+        <!-- 全球官方SNS -->
+        <h5 class="mb-4 fw-light">グローバル公式SNS</h5>
+        <div class="social-icons mb-5 d-flex justify-content-center gap-3">
+          <i class="bi bi-instagram fs-5"></i>
+          <i class="bi bi-facebook fs-5"></i>
+          <i class="bi bi-x fs-5"></i>
+          <i class="bi bi-youtube fs-5"></i>
+          <i class="bi bi-tiktok fs-5"></i>
+          <i class="bi bi-threads fs-5"></i>
+          <i class="bi bi-pinterest fs-5"></i>
+        </div>
+    
+        <!-- 聯絡資訊 -->
+        <p class="mb-2 small">
+          📧 Email: <a href="mailto:tingccc93@gmail.com">tingccc93@gmail.com</a> |
+          🔗 GitHub: <a href="https://github.com/SakiiiCHU" target="_blank">SakiiiCHU</a>
+        </p>
+    
+        <!-- 法律條款與版權 -->
+        <p class="small mb-2">
+          本網站嵌入影片來源自 YouTube，部分圖片來源自 Unsplash，版權歸原作者所有。若有問題，請聯繫我。
+        </p>
+        <p class="small fw-light mb-0">
+          ©2024 Ting-Chen Chu. 本網站為學習作品，僅供示範用途，非商業用途。
+        </p>
+      </div>
+    </footer>
+    
+    <!-- footer end -->
+
+    <!-- back to top end -->
+
+    <!-- 掛載 Boostrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="JS/vlidation.js"></script>
+  </body>
+</html>

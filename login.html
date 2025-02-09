@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <!-- 掛載 Boostrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  
+  </head>
+  <body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+      <div class="container">
+        
+        
+      </div>
+    </main>
+
+    <!-- header -->
+    <header class="">
+      <!-- nav列 start -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <!-- 插入logo圖 / 文字-->
+            Bootstrap.
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li> -->
+              
+              <!-- nav導覽項目 -->
+              <li class="nav-item">
+                <a class="nav-link" href="./about_us.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./product_list.html">Artist</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./product_detail.html">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./store2.html">Store</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./FAQ.html">FAQ</a>
+              </li>
+
+              <!-- 不需要disable -->
+            </ul>
+            <!-- 右側自定義icon start-->
+            <form class="d-flex">
+              
+
+              <button
+                class="btn btn-link m-0"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample"
+              >
+                <!-- <i class="bi bi-cart fs-4 text-black"></i> -->
+                <i class="bi bi-bag fs-5 text-black"></i>
+              </button>
+
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-link m-0"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i class="bi bi-person fs-4 text-black"></i>
+              </button>
+
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button> -->
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- nav列 end -->
+    </header>
+    <!-- header -->
+
+    <!-- 麵包屑start -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Library</li>
+      </ol>
+    </nav>
+    <!-- 麵包屑end -->
+    <!-- login_start -->
+    <div class="container border border-2" style="width: 30%;">
+      <form
+        action=""
+        id="LoginForm"
+        autocomplete="off"
+        class="needs-validation"
+        novalidate
+      >
+        <div class="form-group mb-2">
+          <label for="account">アカウント</label>
+          <input
+            class="form-control"
+            type="text"
+            id="account"
+            name="account"
+            placeholder="例）SakiCHU"
+            required
+          />
+          <div class="invalid-feedback">Please choose a username.</div>
+        </div>
+
+        <div class="form-group mb-2">
+          <label for="password">パスワード</label>
+          <input
+            class="form-control"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="please enter your password"
+            required
+          />
+          <div class="invalid-feedback">Please choose a username.</div>
+        </div>
+        <p class="text-end">
+          <a href="">パスワードを忘れた</a>
+        </p>
+        <div class="form-group">
+          <!-- .btn.btn-primary -->
+          <div class="d-grid">
+            <input
+              type="submit"
+              class="btn btn-outline-primary"
+              value="送信內容を內容する"
+            />
+          </div>
+
+          <!-- <button type="submit" class="btn-submit">
+            <span>送信內容を內容する</span>
+            <i class="bi bi-arrow-right-circle-fill"></i>
+          </button> -->
+        </div>
+      </form>
+    </div>
+<div>
+  <div style="height: 30vh;"></div>
+</div>
+    <!-- insert start -->
+     <!-- 互動式窗 start-->
+    <!-- Modal 2(login)-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">  <!-- modal-dialog-centered 垂直置中-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- 插入form start-->
+        <form
+        action=""
+        id="LoginForm"
+        autocomplete="off"
+        class="needs-validation"
+        novalidate
+      >
+        <div class="form-group mb-2">
+          <label for="account">アカウント</label>
+          <input
+            class="form-control"
+            type="text"
+            id="account"
+            name="account"
+            placeholder="例）SakiCHU"
+            required
+          />
+          <div class="invalid-feedback">Please choose a username.</div>
+        </div>
+
+        <div class="form-group mb-2">
+          <label for="password">パスワード</label>
+          <input
+            class="form-control"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="please enter your password"
+            required
+          />
+          <div class="invalid-feedback">Please choose a username.</div>
+        </div>
+        <p class="text-end">
+          <a href="">パスワードを忘れた</a>
+        </p>
+        <div class="form-group">
+          <!-- .btn.btn-primary -->
+          <div class="d-grid">
+            <input
+              type="submit"
+              class="btn btn-outline-primary"
+              value="送信內容を內容する"
+            />
+          </div>
+
+          <!-- <button type="submit" class="btn-submit">
+            <span>送信內容を內容する</span>
+            <i class="bi bi-arrow-right-circle-fill"></i>
+          </button> -->
+        </div>
+      </form>
+        <!-- 插入form end-->
+      </div>
+      <!-- footer可有可無，可刪 -->
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<!-- offcanvas cart start-->
+ <!-- offcanvas -->
+ <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- offcanvas cart end -->
+    <!-- 互動式窗 end -->
+
+  <!-- back to top start -->
+    <a href="#" class="position-fixed bottom-0 end-0 bg-black p-3 m-3 text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; border-radius: 50%;">
+    <i class="bi bi-caret-up fs-3"></i>
+    </a>
+
+
+    <!-- footer start -->
+    <footer class="footer bg-dark text-light py-5">
+      <div class="container text-center">
+        <!-- APP 區塊 -->
+        <h5 class="mb-4 fs-5">APP</h5>
+        <div class="app-buttons mb-5 d-flex justify-content-center gap-3">
+          <a href="#">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Google Play"
+              class="img-fluid"
+              style="max-height: 40px"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="App Store"
+              class="img-fluid"
+              style="max-height: 40px"
+            />
+          </a>
+        </div>
+    
+        <!-- 全球官方SNS -->
+        <h5 class="mb-4 fw-light">グローバル公式SNS</h5>
+        <div class="social-icons mb-5 d-flex justify-content-center gap-3">
+          <i class="bi bi-instagram fs-5"></i>
+          <i class="bi bi-facebook fs-5"></i>
+          <i class="bi bi-x fs-5"></i>
+          <i class="bi bi-youtube fs-5"></i>
+          <i class="bi bi-tiktok fs-5"></i>
+          <i class="bi bi-threads fs-5"></i>
+          <i class="bi bi-pinterest fs-5"></i>
+        </div>
+    
+        <!-- 聯絡資訊 -->
+        <p class="mb-2 small">
+          📧 Email: <a href="mailto:tingccc93@gmail.com">tingccc93@gmail.com</a> |
+          🔗 GitHub: <a href="https://github.com/SakiiiCHU" target="_blank">SakiiiCHU</a>
+        </p>
+    
+        <!-- 法律條款與版權 -->
+        <p class="small mb-2">
+          本網站嵌入影片來源自 YouTube，部分圖片來源自 Unsplash，版權歸原作者所有。若有問題，請聯繫我。
+        </p>
+        <p class="small fw-light mb-0">
+          ©2024 Ting-Chen Chu. 本網站為學習作品，僅供示範用途，非商業用途。
+        </p>
+      </div>
+    </footer>
+  
+
+  
+    <!-- footer end -->
+    <!-- insert end -->
+
+    <!-- 掛載 Boostrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="JS/vlidation.js"></script>
+  </body>
+</html>

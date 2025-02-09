@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+
+    <!-- 掛載 Boostrap CSS -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style>
+      .bg-primary {
+        background: rgb(14, 14, 14) !important;
+      }
+      .bg-custom {
+        background-color: #ece6e5; 
+      }
+    </style>
+  </head>
+  <body class="h-100 d-flex flex-column">
+
+    <!-- display-flex start-->
+    <main class="flex-shrink-0">
+      <div class="container"></div>
+    </main>
+    <!-- d-flex end -->
+
+  <!-- header start -->
+    <header class="">
+      <!-- nav列 start -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <!-- 插入logo圖 / 文字-->
+            Bootstrap.
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li> -->
+              
+              <!-- nav導覽項目 -->
+              <li class="nav-item">
+                <a class="nav-link" href="./about_us.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./product_list.html">Artist</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./product_detail.html">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./store2.html">Store</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./FAQ.html">FAQ</a>
+              </li>
+
+              <!-- 不需要disable -->
+            </ul>
+            <!-- 右側自定義icon start-->
+            <form class="d-flex">
+              
+
+              <button
+                class="btn btn-link m-0"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample"
+              >
+                <!-- <i class="bi bi-cart fs-4 text-black"></i> -->
+                <i class="bi bi-bag fs-5 text-black"></i>
+              </button>
+
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-link m-0"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i class="bi bi-person fs-4 text-black"></i>
+              </button>
+
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button> -->
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- nav列 end -->
+    </header>
+
+<div class="bg-custom pb-5">
+      <!-- 麵包屑start -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+        </ol>
+      </nav>
+      <!-- 麵包屑end -->
+
+    <!-- 手風琴 -->
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+      <div id="faqAccordion">
+        <!-- FAQ 1 -->
+        <div class="card shadow-sm mb-3">
+          <div class="card-header bg-light" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link text-dark fw-bold" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <i class="bi bi-question-circle"></i> What is the purpose of this website?
+              </button>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+            <div class="card-body">
+              This platform provides a space for artists to showcase their artwork digitally, enabling them to reach a global audience while reducing the costs of physical exhibitions.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 2 -->
+        <div class="card shadow-sm mb-3">
+          <div class="card-header bg-light" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link text-dark fw-bold" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <i class="bi bi-person-plus"></i> How can I register as an artist?
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+            <div class="card-body">
+              Artists can register by visiting the 'Artist Registration' page, where they will be asked to fill in their details, upload their artwork, and set their pricing. Once approved, their profile will be featured on the platform.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 3 -->
+        <div class="card shadow-sm mb-3">
+          <div class="card-header bg-light" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link text-dark fw-bold" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <i class="bi bi-ticket-perforated"></i> How can I purchase tickets for an exhibition?
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+            <div class="card-body">
+              Tickets can be purchased from the 'Exhibitions' section. Simply choose the exhibition you wish to attend, select the ticket type, and complete your purchase via our secure payment system.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 4 -->
+        <div class="card shadow-sm mb-3">
+          <div class="card-header bg-light" id="headingFour">
+            <h5 class="mb-0">
+              <button class="btn btn-link text-dark fw-bold" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <i class="bi bi-wallet"></i> How do I buy artwork from the online gallery?
+              </button>
+            </h5>
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+            <div class="card-body">
+              You can purchase artwork directly from the artist's profile. Once you select a piece of art, follow the instructions for checkout and payment to complete the purchase securely.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 5 -->
+        <div class="card shadow-sm mb-3">
+          <div class="card-header bg-light" id="headingFive">
+            <h5 class="mb-0">
+              <button class="btn btn-link text-dark fw-bold" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <i class="bi bi-gear"></i> How do I manage my profile settings?
+              </button>
+            </h5>
+          </div>
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+            <div class="card-body">
+              To manage your profile settings, log in to your account, visit the 'Account Settings' page, and update your personal information, password, or payment details.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- 手風琴end -->
+
+
+
+
+
+
+</div>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <!-- modal-dialog-centered 垂直置中-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- 插入form start-->
+            <form
+              action=""
+              id="LoginForm"
+              autocomplete="off"
+              class="needs-validation"
+              novalidate
+            >
+              <div class="form-group mb-2">
+                <label for="account">アカウント</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="account"
+                  name="account"
+                  placeholder="例）SakiCHU"
+                  required
+                />
+                <div class="invalid-feedback">Please choose a username.</div>
+              </div>
+
+              <div class="form-group mb-2">
+                <label for="password">パスワード</label>
+                <input
+                  class="form-control"
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="please enter your password"
+                  required
+                />
+                <div class="invalid-feedback">Please choose a username.</div>
+              </div>
+              <p class="text-end">
+                <a href="">パスワードを忘れた</a>
+              </p>
+              <div class="form-group">
+                <!-- .btn.btn-primary -->
+                <div class="d-grid">
+                  <input
+                    type="submit"
+                    class="btn btn-outline-primary"
+                    value="送信內容を內容する"
+                  />
+                </div>
+
+                <!-- <button type="submit" class="btn-submit">
+            <span>送信內容を內容する</span>
+            <i class="bi bi-arrow-right-circle-fill"></i>
+          </button> -->
+              </div>
+            </form>
+            <!-- 插入form end-->
+          </div>
+          <!-- footer可有可無，可刪 -->
+          <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- offcanvas cart start-->
+    <!-- offcanvas -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h4 class="offcanvas-title my-2" id="offcanvasExampleLabel">Your Bag</h4>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body my-5">
+        <div>
+          Your shopping bag is empty.
+        </div>
+        <div class="btn mt-3">
+          <button
+            class="btn btn-secondary my-5"
+            type="button"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+          >
+            Check Out
+          </button>
+          <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+    <!-- offcanvas cart end -->
+    <!-- 互動式窗 end -->
+
+    <!-- back to top start -->
+    <a
+      href="#"
+      class="position-fixed bottom-0 end-0 bg-black p-3 m-3 text-white d-flex align-items-center justify-content-center"
+      style="width: 50px; height: 50px; border-radius: 50%"
+    >
+    Top
+    </a>
+    
+
+    <!-- footer start -->
+    <footer class="footer bg-dark text-light py-5">
+      <div class="container text-center">
+        <!-- APP 區塊 -->
+        <h5 class="mb-4 fs-5">APP</h5>
+        <div class="app-buttons mb-5 d-flex justify-content-center gap-3">
+          <a href="#">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Google Play"
+              class="img-fluid"
+              style="max-height: 40px"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="App Store"
+              class="img-fluid"
+              style="max-height: 40px"
+            />
+          </a>
+        </div>
+    
+        <!-- 全球官方SNS -->
+        <h5 class="mb-4 fw-light">グローバル公式SNS</h5>
+        <div class="social-icons mb-5 d-flex justify-content-center gap-3">
+          <i class="bi bi-instagram fs-5"></i>
+          <i class="bi bi-facebook fs-5"></i>
+          <i class="bi bi-x fs-5"></i>
+          <i class="bi bi-youtube fs-5"></i>
+          <i class="bi bi-tiktok fs-5"></i>
+          <i class="bi bi-threads fs-5"></i>
+          <i class="bi bi-pinterest fs-5"></i>
+        </div>
+    
+        <!-- 聯絡資訊 -->
+        <p class="mb-2 small">
+          📧 Email: <a href="mailto:tingccc93@gmail.com">tingccc93@gmail.com</a> |
+          🔗 GitHub: <a href="https://github.com/SakiiiCHU" target="_blank">SakiiiCHU</a>
+        </p>
+    
+        <!-- 法律條款與版權 -->
+        <p class="small mb-2">
+          本網站嵌入影片來源自 YouTube，部分圖片來源自 Unsplash，版權歸原作者所有。若有問題，請聯繫我。
+        </p>
+        <p class="small fw-light mb-0">
+          ©2024 Ting-Chen Chu. 本網站為學習作品，僅供示範用途，非商業用途。
+        </p>
+      </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- back to top end -->
+
+    <!-- 掛載 Boostrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="JS/vlidation.js"></script>
+  </body>
+</html>
